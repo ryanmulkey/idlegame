@@ -1,14 +1,9 @@
 //variable declarations
 var points = 10;
-var click_value = 1; 
 var multi = 1; 
 var bots = 0;
 
 //point up functions
-function click(value) {
-  points = points + value;
-  document.getElementById("points").innerHTML = points;
-}
 function points_up(num) {
   points = points + num;
   document.getElementById("points").innerHTML = points;
@@ -38,18 +33,6 @@ function buy_multi() {
   document.getElementById('multi_cost').innerHTML = nextCost;
 }
 
-  function buy_click() {
-  var click_cost = Math.floor(5 * Math.pow(1.1, click_value))
-  if(points >= click_cost){
-    click_value = click_value + 1;
-    points = points - click_cost;
-    document.getElementById('click_value').innerHTML = click_value;
-    document.getElementById('points').innerHTML = points;
-  };
-
-  var nextCost = (20 * Math.pow(1.2, multi));
-  document.getElementById('click_multi_cost').innerHTML = nextCost;
-  }
 function decimal(input) {
   var output = Math.round(input)
   return output;
@@ -58,9 +41,8 @@ function decimal(input) {
 //bot mutli
 window.setInterval(function(){
   decimal(multi_cost);
-  decimal(click_cost);
   if(multi >= 2)
   points_up(bots * multi);
   else
   points_up(bots);  
-}, 1000);
+}, 100);
