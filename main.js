@@ -1,8 +1,8 @@
 //variable declarations
 var points = 10;
+var click_value = 1; 
 var multi = 1; 
 var bots = 0;
-var click_value = 1; 
 
 //point up functions
 function click(value) {
