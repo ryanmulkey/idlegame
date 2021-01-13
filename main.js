@@ -45,4 +45,4 @@ window.setInterval(function(){
   points_up(bots * multi);
   else
   points_up(bots);  
-}, 100);
+}, 1000);
